@@ -127,22 +127,26 @@ export default function ThemeForge() {
 
     // Load saved forged theme - only apply to DOM on mount
     useEffect(() => {
-        const saved = localStorage.getItem("forged-theme");
-        if (saved) {
-            const theme = JSON.parse(saved);
-            // Apply theme directly to DOM without triggering state updates
-            const root = document.documentElement;
-            root.style.setProperty("--primary", theme.primary);
-            root.style.setProperty("--background", theme.bg);
-            root.style.setProperty("--card-bg", theme.secondary);
-            root.style.setProperty("--accent", theme.accent);
-            root.style.setProperty("--secondary", theme.secondary);
-            root.style.setProperty("--border", `${theme.primary}20`);
+        try {
+            const saved = localStorage.getItem("forged-theme");
+            if (saved) {
+                const theme = JSON.parse(saved);
+                // Apply theme directly to DOM without triggering state updates
+                const root = document.documentElement;
+                root.style.setProperty("--primary", theme.primary);
+                root.style.setProperty("--background", theme.bg);
+                root.style.setProperty("--card-bg", theme.secondary);
+                root.style.setProperty("--accent", theme.accent);
+                root.style.setProperty("--secondary", theme.secondary);
+                root.style.setProperty("--border", `${theme.primary}20`);
 
-            const primaryRGB = hexToRgb(theme.primary);
-            if (primaryRGB) {
-                root.style.setProperty("--primary-rgb", `${primaryRGB.r}, ${primaryRGB.g}, ${primaryRGB.b}`);
+                const primaryRGB = hexToRgb(theme.primary);
+                if (primaryRGB) {
+                    root.style.setProperty("--primary-rgb", `${primaryRGB.r}, ${primaryRGB.g}, ${primaryRGB.b}`);
+                }
             }
+        } catch (e) {
+            console.error("Failed to load theme:", e);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
