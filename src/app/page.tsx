@@ -2,7 +2,7 @@
 
 import Hero from "@/components/sections/Hero";
 
-import ArtGallery from "@/components/sections/ArtGallery";
+import AuraForge from "@/components/sections/AuraForge";
 import Projects from "@/components/sections/Projects";
 import Stats from "@/components/sections/Stats";
 import Certificates from "@/components/sections/Certificates";
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
 
         <div id="gallery">
-          <ArtGallery />
+          <AuraForge />
         </div>
 
         <div id="projects">
