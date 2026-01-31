@@ -1,0 +1,41 @@
+
+C:\portfolio\src\app\page.tsx
+  3:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\portfolio\src\components\CodeCanvas.tsx
+  69:26  warning  The ref value 'containerRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'containerRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+C:\portfolio\src\components\CustomCursor.tsx
+  7:12  warning  'isHovering' is assigned a value but never used     @typescript-eslint/no-unused-vars
+  7:24  warning  'setIsHovering' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\portfolio\src\components\HeroCanvas.tsx
+  4:10  warning  'Float' is defined but never used                @typescript-eslint/no-unused-vars
+  4:17  warning  'MeshDistortMaterial' is defined but never used  @typescript-eslint/no-unused-vars
+  4:38  warning  'Sphere' is defined but never used               @typescript-eslint/no-unused-vars
+
+C:\portfolio\src\components\SmoothScroll.tsx
+  9:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\portfolio\src\components\sections\ArtGallery.tsx
+   59:8   warning  React Hook useEffect has an unnecessary dependency: 'artworks.length'. Either exclude it or remove the dependency array. Outer scope values like 'artworks.length' aren't valid dependencies because mutating them doesn't re-render the component                                       react-hooks/exhaustive-deps
+  120:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\portfolio\src\components\sections\Certificates.tsx
+  145:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\portfolio\src\components\sections\CodeAsArt.tsx
+   67:11  warning  'containerRef' is assigned a value but never used                @typescript-eslint/no-unused-vars
+  110:33  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  110:48  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\portfolio\src\components\sections\Projects.tsx
+   68:12  warning  'hoveredProject' is assigned a value but never used                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+  101:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\portfolio\src\components\sections\Universe.tsx
+   4:10   warning  'useRef' is defined but never used                               @typescript-eslint/no-unused-vars
+  48:150  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+✖ 18 problems (4 errors, 14 warnings)
+

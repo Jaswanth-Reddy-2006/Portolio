@@ -1,0 +1,44 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#grad1)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="#1a1a1a" fill-opacity="0.8"/>
+  <text x="40" y="50" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff">AlgoScope Dashboard</text>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="80" width="250" height="720" fill="#151515" fill-opacity="0.6"/>
+  
+  <!-- Main Content Area -->
+  <rect x="260" y="100" width="920" height="680" fill="#0f0f0f" fill-opacity="0.4" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1"/>
+  
+  <!-- Algorithm Cards -->
+  <rect x="280" y="120" width="280" height="180" fill="#1a1a1a" fill-opacity="0.6" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1" rx="8"/>
+  <text x="300" y="150" font-family="Arial" font-size="16" font-weight="bold" fill="#ffffff" fill-opacity="0.8">Binary Search</text>
+  <text x="300" y="180" font-family="Arial" font-size="12" fill="#ffffff" fill-opacity="0.5">O(log n) complexity</text>
+  
+  <rect x="580" y="120" width="280" height="180" fill="#1a1a1a" fill-opacity="0.6" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1" rx="8"/>
+  <text x="600" y="150" font-family="Arial" font-size="16" font-weight="bold" fill="#ffffff" fill-opacity="0.8">Quick Sort</text>
+  <text x="600" y="180" font-family="Arial" font-size="12" fill="#ffffff" fill-opacity="0.5">O(n log n) complexity</text>
+  
+  <rect x="880" y="120" width="280" height="180" fill="#1a1a1a" fill-opacity="0.6" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1" rx="8"/>
+  <text x="900" y="150" font-family="Arial" font-size="16" font-weight="bold" fill="#ffffff" fill-opacity="0.8">Graph Traversal</text>
+  <text x="900" y="180" font-family="Arial" font-size="12" fill="#ffffff" fill-opacity="0.5">DFS &amp; BFS</text>
+  
+  <!-- Visualization Area -->
+  <rect x="280" y="320" width="880" height="440" fill="#0a0a0a" fill-opacity="0.8" stroke="#ffffff" stroke-width="2" stroke-opacity="0.2" rx="8"/>
+  <text x="320" y="360" font-family="Arial" font-size="18" fill="#ffffff" fill-opacity="0.6">Algorithm Visualization</text>
+  <text x="320" y="400" font-family="Arial" font-size="14" fill="#ffffff" fill-opacity="0.4">Interactive step-by-step execution</text>
+  
+  <!-- Placeholder text -->
+  <text x="600" y="600" font-family="Arial" font-size="14" fill="#ffffff" fill-opacity="0.3" text-anchor="middle">AlgoScope Dashboard Screenshot</text>
+  <text x="600" y="630" font-family="Arial" font-size="12" fill="#ffffff" fill-opacity="0.2" text-anchor="middle">Replace with actual dashboard screenshot</text>
+</svg>
+

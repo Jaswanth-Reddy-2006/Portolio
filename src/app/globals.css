@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #ffffff;
+  --secondary: #71717a;
+  /* zinc-400 */
+  --accent: #a1a1aa;
+  /* zinc-500 */
+  --card-bg: #18181b;
+  /* zinc-900 */
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='neon'] {
+  --background: #0a0a0f;
+  --foreground: #ffffff;
+  --primary: #00f2ff;
+  --secondary: #ff00ea;
+  --accent: #7000ff;
+  --card-bg: #151520;
+  --border: rgba(0, 242, 255, 0.2);
+}
+
+[data-theme='emerald'] {
+  --background: #020502;
+  --foreground: #e0ffe0;
+  --primary: #10b981;
+  --secondary: #059669;
+  --accent: #34d399;
+  --card-bg: #061006;
+  --border: rgba(16, 185, 129, 0.2);
+}
+
+[data-theme='sunset'] {
+  --background: #0f0a0a;
+  --foreground: #fff5f5;
+  --primary: #f97316;
+  --secondary: #ea580c;
+  --accent: #fb923c;
+  --card-bg: #1a1212;
+  --border: rgba(249, 115, 22, 0.2);
+}
+
+[data-theme='glacier'] {
+  --background: #0a0f14;
+  --foreground: #f0f9ff;
+  --primary: #38bdf8;
+  --secondary: #0ea5e9;
+  --accent: #7dd3fc;
+  --card-bg: #111a22;
+  --border: rgba(56, 189, 248, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-card-bg: var(--card-bg);
+  --color-border-custom: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.5s ease;
+}
+
+.experimental-mode {
+  filter: contrast(1.2) saturate(1.2);
+}
+
+.experimental-mode h1,
+.experimental-mode h2 {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+    text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9;
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+    text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9;
+  }
+
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}
+
+.experimental-mode canvas {
+  filter: hue-rotate(90deg) brightness(1.2);
+}
+
+[data-theme='neon'] canvas {
+  filter: hue-rotate(180deg) saturate(2) brightness(1.2);
+}
+
+[data-theme='emerald'] canvas {
+  filter: hue-rotate(90deg) saturate(2) brightness(1.1);
+}
+
+[data-theme='sunset'] canvas {
+  filter: hue-rotate(30deg) saturate(2) brightness(1.2);
+}
+
+[data-theme='glacier'] canvas {
+  filter: hue-rotate(200deg) saturate(1.5) brightness(1.2);
+}
