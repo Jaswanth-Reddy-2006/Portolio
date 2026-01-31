@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jaswanth Reddy | Digital Artist & Full-Stack Engineer
 
-## Getting Started
+A high-performance, cinematic portfolio showcasing the intersection of generative art, data science, and modern web engineering.
 
-First, run the development server:
+## 🚀 The Vision
+This portfolio is designed to be more than just a resume—it's a digital experience. Built using a **"Gamer-esque"** aesthetic, it leverages 3D physics, cinematic scroll transitions, and dynamic theming to tell a story of technical mastery and creative exploration.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Tech Stack
+*   **Framework:** Next.js 14 (App Router)
+*   **Styling:** Tailwind CSS 4.0
+*   **Animations:** Framer Motion & GSAP
+*   **3D Elements:** Three.js / React Three Fiber
+*   **Smooth Scroll:** Lenis
+*   **Icons:** Lucide React
+*   **AI Collaborators:** Developed with the help of **Antigravity (Google DeepMind)** & Chat GPT.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
+*   **Technical Arena:** An interactive 3D physics lab where technical skills bounce and collide in real-time.
+*   **Art Gallery (Pixel & Logic):** A cinematic horizontal-scroll exhibit featuring selected digital and generative works.
+*   **Dynamic presets:** 5 custom-designed themes (**Midnight, Neon, Emerald, Sunset, Glacier**) with persistent state.
+*   **Achievements & Stats:** Animated counters showcasing technical milestones and growth.
+*   **Responsive Excellence:** Fully optimized for Mobile, Tablet, and ultra-wide Desktop displays.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
+*   `/src/app`: Next.js App Router configuration and global styles.
+*   `/src/components`: UI components and 3D Canvas elements.
+*   `/src/components/sections`: The core experiential blocks (Hero, Projects, Gallery, Stats).
+*   `/public`: High-resolution assets and project images.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 Connect with Me
+*   **LinkedIn:** [Jaswanth Reddy](https://www.linkedin.com/in/jasreaug/)
+*   **GitHub:** [Jaswanth-Reddy-2006](https://github.com/Jaswanth-Reddy-2006)
+*   **Email:** [jaswanthre9@gmail.com](mailto:jaswanthre9@gmail.com)
+*   **Phone:** +91 8008154808
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built with passion, code, and a touch of binary art.*

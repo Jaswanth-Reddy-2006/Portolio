@@ -120,7 +120,10 @@ export default function SkillsBouncing() {
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-foreground mb-3 sm:mb-4">
                     Technical Arena
                 </h2>
-                <div className="h-[2px] w-24 bg-primary/20 mx-auto" />
+                <p className="text-accent tracking-widest uppercase text-xs sm:text-sm">
+                    Mastering the Stack
+                </p>
+                <div className="h-[2px] w-24 bg-primary/20 mx-auto mt-6" />
             </motion.div>
 
             <div

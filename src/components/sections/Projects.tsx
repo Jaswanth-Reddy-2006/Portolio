@@ -78,11 +78,12 @@ export default function Projects() {
                     className="mb-12 sm:mb-16 md:mb-20 text-center"
                 >
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-foreground mb-3 sm:mb-4">
-                        Projects
+                        Selected Projects
                     </h2>
                     <p className="text-accent tracking-widest uppercase text-xs sm:text-sm">
-                        Building solutions that matter
+                        Building Digital Solutions
                     </p>
+                    <div className="h-[2px] w-24 bg-primary/20 mx-auto mt-6" />
                 </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
