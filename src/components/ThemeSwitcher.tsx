@@ -13,14 +13,15 @@ const themes = [
 ];
 
 export default function ThemeSwitcher() {
-    const [currentTheme, setCurrentTheme] = useState("midnight");
+    const [currentTheme, setCurrentTheme] = useState(() => {
+        if (typeof window === 'undefined') return "midnight";
+        return localStorage.getItem("portfolio-theme") || "midnight";
+    });
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem("portfolio-theme") || "midnight";
-        setCurrentTheme(savedTheme);
-        document.documentElement.setAttribute("data-theme", savedTheme);
-    }, []);
+        document.documentElement.setAttribute("data-theme", currentTheme);
+    }, [currentTheme]);
 
     const toggleTheme = (themeId: string) => {
         setCurrentTheme(themeId);

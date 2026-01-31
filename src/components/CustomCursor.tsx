@@ -11,14 +11,10 @@ export default function CustomCursor() {
     const cursorX = useSpring(mouseX, springConfig);
     const cursorY = useSpring(mouseY, springConfig);
 
-    const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-    useEffect(() => {
-        const checkTouch = () => {
-            return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
-        };
-        setIsTouchDevice(checkTouch());
-    }, []);
+    const [isTouchDevice] = useState(() => {
+        if (typeof window === 'undefined') return false;
+        return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+    });
 
     useEffect(() => {
         if (isTouchDevice) return;

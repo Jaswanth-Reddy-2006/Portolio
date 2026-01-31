@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float, TorusKnot, Icosahedron, Stars } from "@react-three/drei";
@@ -90,19 +90,18 @@ export default function ThemeForge() {
     const [activeShape, setActiveShape] = useState("sphere");
     const [isFusing, setIsFusing] = useState(false);
 
-    // Load saved forged theme
-    useEffect(() => {
-        const saved = localStorage.getItem("forged-theme");
-        if (saved) {
-            const theme = JSON.parse(saved);
-            setCustomColor(theme.primary);
-            setActiveMood("Resonating");
-            applyTheme(theme.primary, theme.bg, theme.secondary, theme.accent);
-        }
+    // Helper function to convert hex to RGB
+    const hexToRgb = useCallback((hex: string) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
     }, []);
 
     // Apply theme to the entire document
-    const applyTheme = (primary: string, bg: string = "#000000", secondary: string = "#111111", accent: string = "#ffffff") => {
+    const applyTheme = useCallback((primary: string, bg: string = "#000000", secondary: string = "#111111", accent: string = "#ffffff") => {
 
         // Trigger fusion animation
         setIsFusing(true);
@@ -124,16 +123,29 @@ export default function ThemeForge() {
         if (primaryRGB) {
             root.style.setProperty("--primary-rgb", `${primaryRGB.r}, ${primaryRGB.g}, ${primaryRGB.b}`);
         }
-    };
+    }, [hexToRgb]);
 
-    const hexToRgb = (hex: string) => {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result ? {
-            r: parseInt(result[1], 16),
-            g: parseInt(result[2], 16),
-            b: parseInt(result[3], 16)
-        } : null;
-    };
+    // Load saved forged theme - only apply to DOM on mount
+    useEffect(() => {
+        const saved = localStorage.getItem("forged-theme");
+        if (saved) {
+            const theme = JSON.parse(saved);
+            // Apply theme directly to DOM without triggering state updates
+            const root = document.documentElement;
+            root.style.setProperty("--primary", theme.primary);
+            root.style.setProperty("--background", theme.bg);
+            root.style.setProperty("--card-bg", theme.secondary);
+            root.style.setProperty("--accent", theme.accent);
+            root.style.setProperty("--secondary", theme.secondary);
+            root.style.setProperty("--border", `${theme.primary}20`);
+
+            const primaryRGB = hexToRgb(theme.primary);
+            if (primaryRGB) {
+                root.style.setProperty("--primary-rgb", `${primaryRGB.r}, ${primaryRGB.g}, ${primaryRGB.b}`);
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const handleColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const color = e.target.value;

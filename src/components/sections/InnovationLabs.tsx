@@ -111,7 +111,7 @@ export default function InnovationLabs() {
                                     <div className="space-y-1">
                                         <div className="flex items-center gap-3">
                                             <span className={`font-mono text-xs ${activeId === project.id ? "text-primary" : "text-accent"}`}>
-                                                {project.id} //
+                                                {project.id} {'//'}
                                             </span>
                                             <h3 className={`text-2xl font-bold uppercase tracking-tight ${activeId === project.id ? "text-foreground" : "text-secondary group-hover:text-foreground"}`}>
                                                 {project.title}

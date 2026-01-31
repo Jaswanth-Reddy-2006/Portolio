@@ -1,0 +1,97 @@
+﻿
+> portfolio@0.1.0 lint
+> eslint
+
+
+C:\portfolio\src\components\CustomCursor.tsx
+  20:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\portfolio\src\components\CustomCursor.tsx:20:9
+  18 |             return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+  19 |         };
+> 20 |         setIsTouchDevice(checkTouch());
+     |         ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  21 |     }, []);
+  22 |
+  23 |     useEffect(() => {  react-hooks/set-state-in-effect
+
+C:\portfolio\src\components\SkillsBouncing.tsx
+   4:18  warning  'useScroll' is defined but never used              @typescript-eslint/no-unused-vars
+   4:29  warning  'useTransform' is defined but never used           @typescript-eslint/no-unused-vars
+  58:61  warning  'i' is defined but never used                      @typescript-eslint/no-unused-vars
+  78:41  error    'radius' is never reassigned. Use 'const' instead  prefer-const
+
+C:\portfolio\src\components\ThemeSwitcher.tsx
+  21:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\portfolio\src\components\ThemeSwitcher.tsx:21:9
+  19 |     useEffect(() => {
+  20 |         const savedTheme = localStorage.getItem("portfolio-theme") || "midnight";
+> 21 |         setCurrentTheme(savedTheme);
+     |         ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  22 |         document.documentElement.setAttribute("data-theme", savedTheme);
+  23 |     }, []);
+  24 |  react-hooks/set-state-in-effect
+
+C:\portfolio\src\components\sections\AuraForge.tsx
+    8:34  warning  'Wand2' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+    8:53  warning  'Droplet' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  100:13  error    Error: Cannot access variable before it is declared
+
+`applyTheme` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\portfolio\src\components\sections\AuraForge.tsx:100:13
+   98 |             setCustomColor(theme.primary);
+   99 |             setActiveMood("Resonating");
+> 100 |             applyTheme(theme.primary, theme.bg, theme.secondary, theme.accent);
+      |             ^^^^^^^^^^ `applyTheme` accessed before it is declared
+  101 |         }
+  102 |     }, []);
+  103 |
+
+C:\portfolio\src\components\sections\AuraForge.tsx:105:5
+  103 |
+  104 |     // Apply theme to the entire document
+> 105 |     const applyTheme = (primary: string, bg: string = "#000000", secondary: string = "#111111", accent: string = "#ffffff") => {
+      |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 106 |
+      | ^
+> 107 |         // Trigger fusion animation
+      ΓÇª
+      | ^
+> 126 |         }
+      | ^
+> 127 |     };
+      | ^^^^^^^ `applyTheme` is declared here
+  128 |
+  129 |     const hexToRgb = (hex: string) => {
+  130 |         const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);  react-hooks/immutability
+  102:8   warning  React Hook useEffect has a missing dependency: 'applyTheme'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/exhaustive-deps
+
+C:\portfolio\src\components\sections\InnovationLabs.tsx
+    3:20  warning  'useRef' is defined but never used                                      @typescript-eslint/no-unused-vars
+    3:28  warning  'useEffect' is defined but never used                                   @typescript-eslint/no-unused-vars
+    6:16  warning  'Cpu' is defined but never used                                         @typescript-eslint/no-unused-vars
+    6:21  warning  'Globe' is defined but never used                                       @typescript-eslint/no-unused-vars
+    6:28  warning  'Database' is defined but never used                                    @typescript-eslint/no-unused-vars
+    6:38  warning  'Layers' is defined but never used                                      @typescript-eslint/no-unused-vars
+    6:46  warning  'Zap' is defined but never used                                         @typescript-eslint/no-unused-vars
+    6:51  warning  'Terminal' is defined but never used                                    @typescript-eslint/no-unused-vars
+    6:83  warning  'Fingerprint' is defined but never used                                 @typescript-eslint/no-unused-vars
+   66:12  warning  'isHovering' is assigned a value but never used                         @typescript-eslint/no-unused-vars
+  114:61  error    Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+Γ£û 21 problems (5 errors, 16 warnings)
+

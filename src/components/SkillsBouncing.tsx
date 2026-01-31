@@ -75,7 +75,8 @@ export default function SkillsBouncing() {
 
             setBalls((prevBalls) => {
                 return prevBalls.map((ball) => {
-                    let { x, y, vx, vy, radius } = ball;
+                    let { x, y, vx, vy } = ball;
+                    const { radius } = ball;
 
                     x += vx;
                     y += vy;
