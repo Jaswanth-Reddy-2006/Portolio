@@ -133,7 +133,7 @@ export default function SkillsBouncing() {
                 {balls.map((ball, i) => (
                     <div
                         key={i}
-                        className="absolute flex items-center justify-center rounded-full border border-primary/20 bg-background/90 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-transform hover:scale-110"
+                        className="absolute flex items-center justify-center rounded-full border border-primary/20 bg-background/90 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-transform hover:scale-110 cursor-pointer"
                         style={{
                             left: ball.x - ball.radius,
                             top: ball.y - ball.radius,
@@ -143,7 +143,7 @@ export default function SkillsBouncing() {
                             boxShadow: `0 0 15px ${ball.skill.color}15`
                         }}
                     >
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center pointer-events-none">
                             <ball.skill.icon className="w-6 h-6 mb-1" />
                             <span className="text-[8px] font-bold uppercase tracking-tighter text-foreground/80">{ball.skill.name}</span>
                         </div>

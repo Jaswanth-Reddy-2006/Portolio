@@ -3,7 +3,7 @@
 import Hero from "@/components/sections/Hero";
 
 import AuraForge from "@/components/sections/AuraForge";
-import Projects from "@/components/sections/Projects";
+import InnovationLabs from "@/components/sections/InnovationLabs";
 import Stats from "@/components/sections/Stats";
 import Certificates from "@/components/sections/Certificates";
 import Universe from "@/components/sections/Universe";
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
 
         <div id="projects">
-          <Projects />
+          <InnovationLabs />
         </div>
 
         <div id="stats">
