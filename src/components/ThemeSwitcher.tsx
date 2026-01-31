@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Wand2 } from "lucide-react";
 
 const themes = [
     { id: "midnight", name: "Midnight", color: "#ffffff" },
@@ -51,7 +52,7 @@ export default function ThemeSwitcher() {
                             className="absolute right-0 mt-4 p-3 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl min-w-[160px]"
                         >
                             <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-3 px-2">Select Theme</p>
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 mb-3">
                                 {themes.map((theme) => (
                                     <button
                                         key={theme.id}
@@ -70,6 +71,17 @@ export default function ThemeSwitcher() {
                                     </button>
                                 ))}
                             </div>
+                            <div className="h-[1px] bg-white/10 my-2" />
+                            <button
+                                onClick={() => {
+                                    document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
+                                    setIsOpen(false);
+                                }}
+                                className="w-full flex items-center justify-center gap-2 py-2 bg-primary/20 hover:bg-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest rounded-lg transition-all"
+                            >
+                                <Wand2 className="w-3 h-3" />
+                                Launch Forge
+                            </button>
                         </motion.div>
                     )}
                 </AnimatePresence>
